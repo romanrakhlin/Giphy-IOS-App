@@ -134,8 +134,9 @@ extension HomeViewController {
 extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = GifDetailWireFrame.createGifDetailModule(image: giphyDataList[indexPath.row].images)
-//        self.navigationController?.pushViewController(vc, animated: false)
+        let detailVC = DetailViewController()
+        detailVC.setGIF(imageUrl: self.GIFs[indexPath.row].images?.downsized?.url)
+        self.present(detailVC, animated: true, completion: nil)
     }
 }
 

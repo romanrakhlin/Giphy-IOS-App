@@ -39,20 +39,20 @@ class GIFCell: UICollectionViewCell, ReusableView, NibLoadableView {
     public func setImage(imageUrl: String?) {
         if let imageUrl = imageUrl, let url = URL(string: imageUrl) {
             self.GIFImage.kf.setImage(
-                        with: url,
-                        placeholder: nil,
-                        options: [
-                            .processor(DownsamplingImageProcessor(size: self.bounds.size)),
-                            .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(0.2)),
-                            .cacheOriginalImage
-                        ],
-                        completionHandler: { _ in
-                            self.switchLoading(start: false)
-                        }
+                with: url,
+                placeholder: nil,
+                options: [
+                    .processor(DownsamplingImageProcessor(size: self.bounds.size)),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(0.2)),
+                    .cacheOriginalImage
+                ],
+                completionHandler: { _ in
+                    self.switchLoading(start: false)
+                }
             )
         } else {
-            GIFImage.image = Asset.unknown.image
+            self.GIFImage.image = Asset.unknown.image
         }
     }
     
