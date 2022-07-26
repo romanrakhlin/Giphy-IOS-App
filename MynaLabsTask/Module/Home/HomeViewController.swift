@@ -8,9 +8,10 @@
 import UIKit
 import SnapKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UINavigationBarDelegate {
     
     let gifCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    let customNavigation = CustomNavigation()
     
     var GIFs = [GiphyData]() {
         didSet {
@@ -41,6 +42,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(true)
            
         fetchGIFs()
+        UIApplication.shared.statusBarStyle = .lightContent
     }
 
     private func fetchGIFs(offset: Int = 0) {
@@ -85,7 +87,12 @@ extension HomeViewController {
     }
     
     fileprivate func setupNavigation() {
-        self.title = "Giphy"
+        navigationController?.navigationBar.barTintColor = Asset.backgroundColor.color
+        navigationController?.navigationBar.backgroundColor = Asset.backgroundColor.color
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 40)
+        
+        self.navigationItem.titleView = customNavigation
     }
     
     fileprivate func setupCollectionView() {
@@ -106,6 +113,11 @@ extension HomeViewController {
     }
     
     fileprivate func setupConstraints() {
+        // TODO: - Remove
+        customNavigation.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+        }
+        
         gifCollectionView.snp.makeConstraints { make in
             make.top.bottom.leading.trailing.equalToSuperview()
         }
@@ -184,7 +196,6 @@ extension HomeViewController {
 //        self.isRefresh = false
 //    }
 }
-
 
 
 

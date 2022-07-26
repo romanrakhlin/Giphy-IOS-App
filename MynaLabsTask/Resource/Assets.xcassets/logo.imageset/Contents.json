@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "1600px-Giphy-logo.svg@1x.png",
+      "filename" : "giphy+logo+web+whit-01@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "1600px-Giphy-logo.svg@2x.png",
+      "filename" : "giphy+logo+web+whit-01@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "1600px-Giphy-logo.svg@3x.png",
+      "filename" : "giphy+logo+web+whit-01@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
