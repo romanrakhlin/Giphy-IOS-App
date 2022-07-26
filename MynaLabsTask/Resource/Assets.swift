@@ -21,6 +21,11 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
+  internal enum ShimmerColors {
+    internal static let blue = ColorAsset(name: "Blue")
+    internal static let green = ColorAsset(name: "Green")
+    internal static let pink = ColorAsset(name: "Pink")
+  }
   internal static let unknown = ImageAsset(name: "Unknown")
   internal static let backgroundColor = ColorAsset(name: "backgroundColor")
   internal static let camera = ImageAsset(name: "camera")

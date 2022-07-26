@@ -15,24 +15,9 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="416" height="166"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qsZ-O3-swU" customClass="AnimatedImageView" customModule="Kingfisher">
-                        <rect key="frame" x="0.0" y="0.0" width="416" height="166"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </imageView>
-                </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="Qqd-nd-jGA"/>
-            <constraints>
-                <constraint firstAttribute="trailing" secondItem="qsZ-O3-swU" secondAttribute="trailing" id="CBC-4j-M33"/>
-                <constraint firstItem="qsZ-O3-swU" firstAttribute="leading" secondItem="n8t-qz-aMW" secondAttribute="leading" id="oAL-tV-4qx"/>
-                <constraint firstAttribute="bottom" secondItem="qsZ-O3-swU" secondAttribute="bottom" id="sCj-F6-LUL"/>
-                <constraint firstItem="qsZ-O3-swU" firstAttribute="top" secondItem="n8t-qz-aMW" secondAttribute="top" id="sdZ-Qo-LLH"/>
-            </constraints>
             <size key="customSize" width="416" height="166"/>
-            <connections>
-                <outlet property="imageView" destination="qsZ-O3-swU" id="W7E-ph-nKJ"/>
-            </connections>
             <point key="canvasLocation" x="397.10144927536237" y="156.69642857142856"/>
         </collectionViewCell>
     </objects>

@@ -70,11 +70,17 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
     
     private func reloaCollectionView() {
         DispatchQueue.main.async { [self] in
-            UIView.transition(with: gifCollectionView, duration: 0.2, options: .transitionCrossDissolve, animations: { () -> Void in
-                self.gifCollectionView.reloadData()
-            }, completion: { _ in
-                self.isRefresh = false
-            })
+            self.gifCollectionView.reloadData()
+            self.isRefresh = false
+            
+//            self.gifCollectionView.reloadSections(IndexSet(integersIn: 0...gifCollectionView.numberOfSections - 1))
+//            self.isRefresh = false
+           
+//            UIView.transition(with: gifCollectionView, duration: 2, options: ., animations: { () -> Void in
+//                self.gifCollectionView.reloadData()
+//            }, completion: { _ in
+//                self.isRefresh = false
+//            })
         }
     }
 }
@@ -102,7 +108,7 @@ extension HomeViewController {
     fileprivate func setupCollectionView() {
         gifCollectionView.delegate = self
         gifCollectionView.dataSource = self
-        gifCollectionView.contentInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        gifCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         gifCollectionView.register(GIFCell.self)
         gifCollectionView.collectionViewLayout = GiphyLayout()
         
@@ -186,25 +192,6 @@ extension HomeViewController: GiphyLayoutDelegate {
     }
 }
 
-extension HomeViewController {
-    
-//    func searchSuccess(data: [GiphyData], pagination: Pagenation) {
-//        if !self.isRefresh {
-//            self.gifCollectionView.setContentOffset(.zero, animated: false)
-//        }
-//
-//        self.GIFs.append(contentsOf: data)
-//        self.pagination = pagination
-//        self.gifCollectionView.reloadData()
-//        self.isRefresh = false
-//    }
-}
-
-
-
-
-
-
 protocol GiphyLayoutDelegate: AnyObject {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
@@ -213,7 +200,7 @@ class GiphyLayout: UICollectionViewLayout {
     
     weak var delegate: GiphyLayoutDelegate?
     private let numberOfColumns = 2
-    private let cellPadding: CGFloat = 6
+    private let cellPadding: CGFloat = 3
     private var cache: [UICollectionViewLayoutAttributes] = []
     private var contentHeight: CGFloat = 0
     

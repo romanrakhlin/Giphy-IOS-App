@@ -14,5 +14,6 @@ target 'MynaLabsTask' do
 	# UI
 	pod "SnapKit"
 	pod "Kingfisher"
+	pod "LoadingShimmer"
 
 end
