@@ -55,6 +55,25 @@ class DetailViewController: UIViewController {
     
     private func setupUI() {
         // configure navigation buttons
+        var closeButtonConfig = UIButton.Configuration.borderless()
+        closeButtonConfig.image = UIImage(systemName: "xmark")
+        closeButtonConfig.baseForegroundColor = .white
+        closeButtonConfig.buttonSize = .medium
+        closeButtonConfig.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        closeButton.configuration = closeButtonConfig
+        
+        var shareButtonConfig = UIButton.Configuration.borderless()
+        shareButtonConfig.image = UIImage(systemName: "square.and.arrow.up")
+        shareButtonConfig.baseForegroundColor = .white
+        shareButtonConfig.buttonSize = .medium
+        shareButtonConfig.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
+        shareButton.configuration = shareButtonConfig
+        
+        self.view.addSubview(closeButton)
+        self.view.addSubview(shareButton)
+        
+        // configure image
+        previewImage.contentMode = .scaleAspectFit
         
         
         // configure social buttons stack
@@ -64,13 +83,24 @@ class DetailViewController: UIViewController {
 //        firstStack.alignment = .center
 //        firstStack.distribution = .equalSpacing
         
+        
         self.view.addSubview(previewImage)
     }
     
     private func setupConstraints() {
+        closeButton.snp.makeConstraints { make in
+            make.left.top.equalTo(self.view.safeAreaLayoutGuide).offset(20)
+        }
+        
+        shareButton.snp.makeConstraints { make in
+            make.right.equalTo(self.view.safeAreaLayoutGuide).offset(-10)
+            make.top.equalTo(self.view.safeAreaLayoutGuide).offset(10)
+        }
+        
         previewImage.snp.makeConstraints { make in
-            make.height.width.equalTo(144)
+            make.height.width.equalTo(self.view.frame.width - 40)
             make.centerX.equalTo(self.view)
+            make.top.equalTo(120)
         }
     }
 }
