@@ -17,12 +17,12 @@ class GIFCell: UICollectionViewCell, ReusableView, NibLoadableView {
         imageView.kf.indicatorType = .activity
     }
 
-    func setImage(imageUrl: String) {
-        guard let url = URL(string: imageUrl) else {
-            return
+    func setImage(imageUrl: String?) {
+        if let imageUrl = imageUrl, let url = URL(string: imageUrl) {
+            imageView.kf.setImage(with: url)
+        } else {
+            imageView.image = Asset.unknown.image
         }
-        
-        imageView.kf.setImage(with: url)
     }
     
     override func prepareForReuse() {

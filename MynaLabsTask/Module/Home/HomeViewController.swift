@@ -142,17 +142,8 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GIFCell = collectionView.dequeueReusableCell(for: indexPath)
-        
-        
-        if
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GIFCell", for: indexPath) as? GIFCell,
-            let imageUrl = GIFs[indexPath.row].images?.downsized?.url
-        {
-            cell.setImage(imageUrl: imageUrl)
-            return cell
-        } else {
-            return UICollectionViewCell()
-        }
+        cell.setImage(imageUrl: GIFs[indexPath.row].images?.downsized?.url)
+        return cell
     }
 }
 
