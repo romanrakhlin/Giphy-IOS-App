@@ -33,6 +33,7 @@
 		827A56282890262D00A51B26 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A56272890262D00A51B26 /* CustomNavigation.swift */; };
 		827A562A2890297C00A51B26 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A56292890297C00A51B26 /* Assets.swift */; };
 		827A562C289055DB00A51B26 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A562B289055DB00A51B26 /* UIColor+Extension.swift */; };
+		827A562E2890702100A51B26 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A562D2890702100A51B26 /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		827A56272890262D00A51B26 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
 		827A56292890297C00A51B26 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		827A562B289055DB00A51B26 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		827A562D2890702100A51B26 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		E1562F3FF9CA39844B1C4511 /* Pods-MynaLabsTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.release.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.release.xcconfig"; sourceTree = "<group>"; };
 		EC6D7DC51CB10F1A035395D9 /* Pods-MynaLabsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.debug.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,6 +176,7 @@
 			children = (
 				827A55E5288EF11500A51B26 /* UICollectionView+Extension.swift */,
 				827A562B289055DB00A51B26 /* UIColor+Extension.swift */,
+				827A562D2890702100A51B26 /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				827A5619288F32BB00A51B26 /* HomeRouter.swift in Sources */,
 				827A5606288F318900A51B26 /* HomeViewModel.swift in Sources */,
 				827A562A2890297C00A51B26 /* Assets.swift in Sources */,
+				827A562E2890702100A51B26 /* UIView+Extension.swift in Sources */,
 				827A5626288F4EF400A51B26 /* DetailViewModel.swift in Sources */,
 				827A55E6288EF11500A51B26 /* UICollectionView+Extension.swift in Sources */,
 				827A5617288F328600A51B26 /* BaseRouter.swift in Sources */,
@@ -567,6 +571,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -595,6 +600,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
