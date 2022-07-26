@@ -12,10 +12,13 @@ import Kingfisher
 class ShimmerImageView: UIImageView {
     
     static let animationDuration: Double = 2.0
-    let gradientColorOne: CGColor = UIColor.purple.cgColor
-    let gradientColorTwo: CGColor = UIColor.lig.cgColor
     
     lazy var gradientLayer: CAGradientLayer = {
+        let randomColor: UIColor = .randomColor
+        
+        let gradientColorOne: CGColor = randomColor.cgColor
+        let gradientColorTwo: CGColor = randomColor.withAlphaComponent(1.4).cgColor
+        
         let gradient = CAGradientLayer()
         gradient.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradient.endPoint = CGPoint(x: 0.0, y: 1.0)
@@ -71,7 +74,6 @@ class GIFCell: UICollectionViewCell, ReusableView, NibLoadableView {
     
     private func setupUI() {
         GIFImage.layer.cornerRadius = 4
-        GIFImage.backgroundColor = .purple
         GIFImage.layer.masksToBounds = true
         
         self.addSubview(GIFImage)
