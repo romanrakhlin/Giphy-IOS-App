@@ -9,10 +9,7 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController, UINavigationBarDelegate {
-    
-    let gifCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-    let customNavigation = CustomNavigation()
-    
+
     var GIFs = [GiphyData]() {
         didSet {
             print(GIFs.count)
@@ -20,6 +17,9 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
     }
     var pagenation: Pagenation?
     var isRefresh = false
+    
+    let gifCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    let customNavigation = CustomNavigation()
     
     private var viewModel: HomeViewModelProtocol
     
@@ -42,6 +42,8 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
         super.viewWillAppear(true)
            
         fetchGIFs()
+        
+        // TODO: - Fix Deprecated Feature
         UIApplication.shared.statusBarStyle = .lightContent
     }
 
@@ -81,6 +83,8 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
 extension HomeViewController {
     
     fileprivate func setupLayout() {
+        self.gifCollectionView.backgroundColor = Asset.backgroundColor.color
+        
         setupNavigation()
         setupCollectionView()
         setupConstraints()
@@ -98,11 +102,8 @@ extension HomeViewController {
     fileprivate func setupCollectionView() {
         gifCollectionView.delegate = self
         gifCollectionView.dataSource = self
-        
         gifCollectionView.contentInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-        
         gifCollectionView.register(GIFCell.self)
-        
         gifCollectionView.collectionViewLayout = GiphyLayout()
         
         if let layout = gifCollectionView.collectionViewLayout as? GiphyLayout {
@@ -113,7 +114,6 @@ extension HomeViewController {
     }
     
     fileprivate func setupConstraints() {
-        // TODO: - Remove
         customNavigation.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
         }
@@ -124,12 +124,26 @@ extension HomeViewController {
     }
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+// MARK: - UICollectionViewDelegate
+extension HomeViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let vc = GifDetailWireFrame.createGifDetailModule(image: giphyDataList[indexPath.row].images)
+//        self.navigationController?.pushViewController(vc, animated: false)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension HomeViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return GIFs.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: GIFCell = collectionView.dequeueReusableCell(for: indexPath)
+        
+        
         if
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GIFCell", for: indexPath) as? GIFCell,
             let imageUrl = GIFs[indexPath.row].images?.downsized?.url
@@ -140,11 +154,10 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return UICollectionViewCell()
         }
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = GifDetailWireFrame.createGifDetailModule(image: giphyDataList[indexPath.row].images)
-//        self.navigationController?.pushViewController(vc, animated: false)
-    }
+}
+
+// MARK: - UIScrollViewDelegate
+extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (self.gifCollectionView.contentOffset.y >= (self.gifCollectionView.contentSize.height - self.gifCollectionView.bounds.size.height)) {
@@ -160,7 +173,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
        if scrollView.panGestureRecognizer.translation(in: scrollView).y < 0 {
           navigationController?.setNavigationBarHidden(true, animated: true)
-
        } else {
           navigationController?.setNavigationBarHidden(false, animated: true)
        }
