@@ -38,32 +38,18 @@ class GIFCell: UICollectionViewCell, ReusableView, NibLoadableView {
 
     public func setImage(imageUrl: String?) {
         if let imageUrl = imageUrl, let url = URL(string: imageUrl) {
-            KingfisherManager.shared.retrieveImage(
+            self.GIFImage.kf.setImage(
                 with: url,
+                placeholder: nil,
                 options: [
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.2)),
                     .cacheOriginalImage
-                ]) { result in
-                    switch result {
-                    case .success(let value):
-                        let GIFData = try? Data(contentsOf: value.image)
-                        let compressData = UIImage.scalGIFWithData(gitData: GIFData, scalSize: CGSize(width: 250, height: 150))
-                        
-                    case .failure(_):
-                        print("kjnj")
-                    }
-//                    switch result {
-//                    case .success(let value):
-//                        let GIFData = try Data(value.image)
-//                        let compressData = UIImage.scalGIFWithData(gitData: GIFData, scalSize: CGSize(width: 250, height: 150))
-//                    case .failure(let error):
-//                        print("FAIL TO LOAD IMAGE")
-//                        return
-//                    }
-                    
+                ],
+                completionHandler: { _ in
                     self.switchLoading(start: false)
-            }
+                }
+            )
         } else {
             self.GIFImage.image = Asset.unknown.image
         }

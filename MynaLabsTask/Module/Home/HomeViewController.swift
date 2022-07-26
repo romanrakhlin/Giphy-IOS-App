@@ -108,6 +108,7 @@ extension HomeViewController {
     fileprivate func setupCollectionView() {
         gifCollectionView.delegate = self
         gifCollectionView.dataSource = self
+//        gifCollectionView.prefetchDataSource = self
         gifCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         gifCollectionView.register(GIFCell.self)
         gifCollectionView.collectionViewLayout = GiphyLayout()
@@ -135,7 +136,7 @@ extension HomeViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = DetailViewController()
-        detailVC.setGIF(imageUrl: self.GIFs[indexPath.row].images?.downsized?.url)
+        detailVC.setGIF(imageUrl: self.GIFs[indexPath.row].images?.original?.url)
         self.present(detailVC, animated: true, completion: nil)
     }
 }
@@ -149,7 +150,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GIFCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.setImage(imageUrl: GIFs[indexPath.row].images?.downsized?.url)
+        cell.setImage(imageUrl: GIFs[indexPath.row].images?.fixedWidth?.url)
         return cell
     }
 }
@@ -181,7 +182,7 @@ extension HomeViewController: UIScrollViewDelegate {
 extension HomeViewController: MosaicLayoutDelegate {
     
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        guard let downSized = GIFs[indexPath.row].images?.downsized,
+        guard let downSized = GIFs[indexPath.row].images?.fixedWidth,
             let width = downSized.width, let height = downSized.height else {
             return 0
         }
@@ -194,3 +195,10 @@ extension HomeViewController: MosaicLayoutDelegate {
         return downloadedImageHeight * ratio
     }
 }
+
+// MARK: - UICollectionViewDataSourcePrefetching
+//extension HomeViewController: UICollectionViewDataSourcePrefetching {
+//    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+//        let urls = indexPaths.compactMap { URL(string: (GIFs[$0.row].images?.r?.url)!) }
+//    }
+//}

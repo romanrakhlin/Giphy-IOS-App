@@ -30,16 +30,10 @@ class DetailViewController: UIViewController {
                 with: url,
                 placeholder: nil,
                 options: [
-                    .processor(DownsamplingImageProcessor(size: self.view.bounds.size)),
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.2)),
                     .cacheOriginalImage
-                ],
-                completionHandler: { _ in
-                    
-                    
-                    
-                }
+                ]
             )
         } else {
             self.previewImage.image = Asset.unknown.image
@@ -54,6 +48,12 @@ class DetailViewController: UIViewController {
     }
     
     private func setupUI() {
+        previewImage.layer.cornerRadius = 4
+        previewImage.backgroundColor = .randomColor
+        previewImage.layer.masksToBounds = true
+        
+        switchLoading(start: true)
+        
         // configure navigation buttons
         var closeButtonConfig = UIButton.Configuration.borderless()
         closeButtonConfig.image = UIImage(systemName: "xmark")
