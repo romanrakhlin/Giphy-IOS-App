@@ -7,23 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B90D6694EC84DAED41E88FC /* Pods_MynaLabsTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E3DD528AD091C3938E894D8 /* Pods_MynaLabsTask.framework */; };
 		827A55BF288EED4A00A51B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55BE288EED4A00A51B26 /* AppDelegate.swift */; };
 		827A55C1288EED4A00A51B26 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55C0288EED4A00A51B26 /* SceneDelegate.swift */; };
-		827A55C3288EED4A00A51B26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55C2288EED4A00A51B26 /* ViewController.swift */; };
-		827A55C6288EED4A00A51B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827A55C4288EED4A00A51B26 /* Main.storyboard */; };
 		827A55C8288EED4C00A51B26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 827A55C7288EED4C00A51B26 /* Assets.xcassets */; };
 		827A55CB288EED4C00A51B26 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 827A55C9288EED4C00A51B26 /* LaunchScreen.storyboard */; };
+		827A55DA288EF01C00A51B26 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55D9288EF01C00A51B26 /* HomeViewController.swift */; };
+		827A55E0288EF08100A51B26 /* GIF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55DF288EF08100A51B26 /* GIF.swift */; };
+		827A55E6288EF11500A51B26 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55E5288EF11500A51B26 /* UICollectionView+Extension.swift */; };
+		827A55EB288EF15900A51B26 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55EA288EF15900A51B26 /* NibLoadableView.swift */; };
+		827A55ED288EF16A00A51B26 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55EC288EF16A00A51B26 /* ReusableView.swift */; };
+		827A55EF288EF51100A51B26 /* NetworkWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55EE288EF51100A51B26 /* NetworkWorker.swift */; };
+		827A55F4288F007100A51B26 /* GIFCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A55F3288F007100A51B26 /* GIFCell.swift */; };
+		827A5606288F318900A51B26 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5605288F318900A51B26 /* HomeViewModel.swift */; };
+		827A560E288F322200A51B26 /* NetworkErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A560D288F322200A51B26 /* NetworkErrors.swift */; };
+		827A5610288F322E00A51B26 /* StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A560F288F322E00A51B26 /* StatusCode.swift */; };
+		827A5612288F324A00A51B26 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5611288F324A00A51B26 /* Result.swift */; };
+		827A5614288F326000A51B26 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5613288F326000A51B26 /* HttpMethod.swift */; };
+		827A5617288F328600A51B26 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5616288F328600A51B26 /* BaseRouter.swift */; };
+		827A5619288F32BB00A51B26 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5618288F32BB00A51B26 /* HomeRouter.swift */; };
+		827A561B288F33F600A51B26 /* GIFCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A561A288F33F600A51B26 /* GIFCell.xib */; };
+		827A561E288F34B400A51B26 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A561D288F34B400A51B26 /* TabBarViewController.swift */; };
+		827A5621288F4EC200A51B26 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5620288F4EC200A51B26 /* DetailViewController.swift */; };
+		827A5626288F4EF400A51B26 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A5625288F4EF400A51B26 /* DetailViewModel.swift */; };
+		827A56282890262D00A51B26 /* CustomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A56272890262D00A51B26 /* CustomNavigation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E3DD528AD091C3938E894D8 /* Pods_MynaLabsTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MynaLabsTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		827A55BB288EED4A00A51B26 /* MynaLabsTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MynaLabsTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		827A55BE288EED4A00A51B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		827A55C0288EED4A00A51B26 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		827A55C2288EED4A00A51B26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		827A55C5288EED4A00A51B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		827A55C7288EED4C00A51B26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		827A55CA288EED4C00A51B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		827A55CC288EED4C00A51B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		827A55D9288EF01C00A51B26 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		827A55DF288EF08100A51B26 /* GIF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIF.swift; sourceTree = "<group>"; };
+		827A55E5288EF11500A51B26 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		827A55EA288EF15900A51B26 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		827A55EC288EF16A00A51B26 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
+		827A55EE288EF51100A51B26 /* NetworkWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorker.swift; sourceTree = "<group>"; };
+		827A55F3288F007100A51B26 /* GIFCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GIFCell.swift; sourceTree = "<group>"; };
+		827A5605288F318900A51B26 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		827A560D288F322200A51B26 /* NetworkErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrors.swift; sourceTree = "<group>"; };
+		827A560F288F322E00A51B26 /* StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCode.swift; sourceTree = "<group>"; };
+		827A5611288F324A00A51B26 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		827A5613288F326000A51B26 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		827A5616288F328600A51B26 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		827A5618288F32BB00A51B26 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		827A561A288F33F600A51B26 /* GIFCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GIFCell.xib; sourceTree = "<group>"; };
+		827A561D288F34B400A51B26 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		827A5620288F4EC200A51B26 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		827A5625288F4EF400A51B26 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		827A56272890262D00A51B26 /* CustomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigation.swift; sourceTree = "<group>"; };
+		E1562F3FF9CA39844B1C4511 /* Pods-MynaLabsTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.release.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.release.xcconfig"; sourceTree = "<group>"; };
+		EC6D7DC51CB10F1A035395D9 /* Pods-MynaLabsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.debug.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +69,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B90D6694EC84DAED41E88FC /* Pods_MynaLabsTask.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		245F40F83698204218D0EC79 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E3DD528AD091C3938E894D8 /* Pods_MynaLabsTask.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		827A55B2288EED4A00A51B26 = {
 			isa = PBXGroup;
 			children = (
 				827A55BD288EED4A00A51B26 /* MynaLabsTask */,
 				827A55BC288EED4A00A51B26 /* Products */,
+				AFD17C83D94A210905CBA418 /* Pods */,
+				245F40F83698204218D0EC79 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +107,175 @@
 			children = (
 				827A55BE288EED4A00A51B26 /* AppDelegate.swift */,
 				827A55C0288EED4A00A51B26 /* SceneDelegate.swift */,
-				827A55C2288EED4A00A51B26 /* ViewController.swift */,
-				827A55C4288EED4A00A51B26 /* Main.storyboard */,
-				827A55C7288EED4C00A51B26 /* Assets.xcassets */,
-				827A55C9288EED4C00A51B26 /* LaunchScreen.storyboard */,
+				827A55D2288EEEC800A51B26 /* Common */,
+				827A55D4288EEED600A51B26 /* Module */,
+				827A55D3288EEECD00A51B26 /* Resource */,
 				827A55CC288EED4C00A51B26 /* Info.plist */,
 			);
 			path = MynaLabsTask;
+			sourceTree = "<group>";
+		};
+		827A55D2288EEEC800A51B26 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				827A55E9288EF14D00A51B26 /* View */,
+				827A55E3288EF0D500A51B26 /* Extension */,
+				827A55E4288EF0DD00A51B26 /* Network */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		827A55D3288EEECD00A51B26 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				827A55C7288EED4C00A51B26 /* Assets.xcassets */,
+				827A55C9288EED4C00A51B26 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		827A55D4288EEED600A51B26 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				827A561C288F349B00A51B26 /* TabBar */,
+				827A55D8288EF00D00A51B26 /* Home */,
+				827A561F288F4EA900A51B26 /* Detail */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		827A55D8288EF00D00A51B26 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				827A5604288F316F00A51B26 /* Model */,
+				827A5603288F316B00A51B26 /* View */,
+				827A5607288F318C00A51B26 /* ViewModel */,
+				827A55D9288EF01C00A51B26 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		827A55DE288EF06F00A51B26 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				827A55F3288F007100A51B26 /* GIFCell.swift */,
+				827A561A288F33F600A51B26 /* GIFCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		827A55E3288EF0D500A51B26 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				827A55E5288EF11500A51B26 /* UICollectionView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		827A55E4288EF0DD00A51B26 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				827A5615288F327300A51B26 /* Router */,
+				827A560A288F31FD00A51B26 /* Components */,
+				827A55EE288EF51100A51B26 /* NetworkWorker.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		827A55E9288EF14D00A51B26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827A55EA288EF15900A51B26 /* NibLoadableView.swift */,
+				827A55EC288EF16A00A51B26 /* ReusableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		827A5603288F316B00A51B26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				827A55DE288EF06F00A51B26 /* Cell */,
+				827A56272890262D00A51B26 /* CustomNavigation.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		827A5604288F316F00A51B26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				827A55DF288EF08100A51B26 /* GIF.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		827A5607288F318C00A51B26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				827A5605288F318900A51B26 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		827A560A288F31FD00A51B26 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				827A560D288F322200A51B26 /* NetworkErrors.swift */,
+				827A560F288F322E00A51B26 /* StatusCode.swift */,
+				827A5611288F324A00A51B26 /* Result.swift */,
+				827A5613288F326000A51B26 /* HttpMethod.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		827A5615288F327300A51B26 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				827A5616288F328600A51B26 /* BaseRouter.swift */,
+				827A5618288F32BB00A51B26 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		827A561C288F349B00A51B26 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				827A561D288F34B400A51B26 /* TabBarViewController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		827A561F288F4EA900A51B26 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				827A5623288F4ECE00A51B26 /* View */,
+				827A5624288F4ED500A51B26 /* ViewModel */,
+				827A5620288F4EC200A51B26 /* DetailViewController.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		827A5623288F4ECE00A51B26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		827A5624288F4ED500A51B26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				827A5625288F4EF400A51B26 /* DetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AFD17C83D94A210905CBA418 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC6D7DC51CB10F1A035395D9 /* Pods-MynaLabsTask.debug.xcconfig */,
+				E1562F3FF9CA39844B1C4511 /* Pods-MynaLabsTask.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +285,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 827A55CF288EED4C00A51B26 /* Build configuration list for PBXNativeTarget "MynaLabsTask" */;
 			buildPhases = (
+				48F1595E33479729BD5E78C1 /* [CP] Check Pods Manifest.lock */,
 				827A55B7288EED4A00A51B26 /* Sources */,
 				827A55B8288EED4A00A51B26 /* Frameworks */,
 				827A55B9288EED4A00A51B26 /* Resources */,
+				1E51F63120990DDDB05945C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,35 +339,86 @@
 			buildActionMask = 2147483647;
 			files = (
 				827A55CB288EED4C00A51B26 /* LaunchScreen.storyboard in Resources */,
+				827A561B288F33F600A51B26 /* GIFCell.xib in Resources */,
 				827A55C8288EED4C00A51B26 /* Assets.xcassets in Resources */,
-				827A55C6288EED4A00A51B26 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E51F63120990DDDB05945C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		48F1595E33479729BD5E78C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MynaLabsTask-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		827A55B7288EED4A00A51B26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827A55C3288EED4A00A51B26 /* ViewController.swift in Sources */,
+				827A56282890262D00A51B26 /* CustomNavigation.swift in Sources */,
+				827A55ED288EF16A00A51B26 /* ReusableView.swift in Sources */,
+				827A5612288F324A00A51B26 /* Result.swift in Sources */,
+				827A55F4288F007100A51B26 /* GIFCell.swift in Sources */,
+				827A5610288F322E00A51B26 /* StatusCode.swift in Sources */,
+				827A55EB288EF15900A51B26 /* NibLoadableView.swift in Sources */,
+				827A5619288F32BB00A51B26 /* HomeRouter.swift in Sources */,
+				827A5606288F318900A51B26 /* HomeViewModel.swift in Sources */,
+				827A5626288F4EF400A51B26 /* DetailViewModel.swift in Sources */,
+				827A55E6288EF11500A51B26 /* UICollectionView+Extension.swift in Sources */,
+				827A5617288F328600A51B26 /* BaseRouter.swift in Sources */,
+				827A5621288F4EC200A51B26 /* DetailViewController.swift in Sources */,
+				827A561E288F34B400A51B26 /* TabBarViewController.swift in Sources */,
+				827A55E0288EF08100A51B26 /* GIF.swift in Sources */,
 				827A55BF288EED4A00A51B26 /* AppDelegate.swift in Sources */,
 				827A55C1288EED4A00A51B26 /* SceneDelegate.swift in Sources */,
+				827A5614288F326000A51B26 /* HttpMethod.swift in Sources */,
+				827A560E288F322200A51B26 /* NetworkErrors.swift in Sources */,
+				827A55EF288EF51100A51B26 /* NetworkWorker.swift in Sources */,
+				827A55DA288EF01C00A51B26 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		827A55C4288EED4A00A51B26 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				827A55C5288EED4A00A51B26 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		827A55C9288EED4C00A51B26 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +546,7 @@
 		};
 		827A55D0288EED4C00A51B26 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC6D7DC51CB10F1A035395D9 /* Pods-MynaLabsTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,7 +557,6 @@
 				INFOPLIST_FILE = MynaLabsTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,12 +568,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		827A55D1288EED4C00A51B26 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1562F3FF9CA39844B1C4511 /* Pods-MynaLabsTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,7 +585,6 @@
 				INFOPLIST_FILE = MynaLabsTask/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +596,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
