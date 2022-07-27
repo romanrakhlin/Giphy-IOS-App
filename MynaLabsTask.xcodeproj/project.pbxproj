@@ -37,6 +37,7 @@
 		827A56322890758F00A51B26 /* MosaicLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A56312890758E00A51B26 /* MosaicLayout.swift */; };
 		827A563728907AC500A51B26 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A563628907AC500A51B26 /* SocialButton.swift */; };
 		827A563928907C0C00A51B26 /* SocialEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A563828907C0C00A51B26 /* SocialEnum.swift */; };
+		827A563B2890CABD00A51B26 /* CetegoryScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A563A2890CABD00A51B26 /* CetegoryScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		827A56312890758E00A51B26 /* MosaicLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MosaicLayout.swift; sourceTree = "<group>"; };
 		827A563628907AC500A51B26 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
 		827A563828907C0C00A51B26 /* SocialEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialEnum.swift; sourceTree = "<group>"; };
+		827A563A2890CABD00A51B26 /* CetegoryScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CetegoryScrollView.swift; sourceTree = "<group>"; };
 		E1562F3FF9CA39844B1C4511 /* Pods-MynaLabsTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.release.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.release.xcconfig"; sourceTree = "<group>"; };
 		EC6D7DC51CB10F1A035395D9 /* Pods-MynaLabsTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MynaLabsTask.debug.xcconfig"; path = "Target Support Files/Pods-MynaLabsTask/Pods-MynaLabsTask.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -212,6 +214,7 @@
 				827A55DE288EF06F00A51B26 /* Cell */,
 				827A56272890262D00A51B26 /* CustomNavigation.swift */,
 				827A56312890758E00A51B26 /* MosaicLayout.swift */,
+				827A563A2890CABD00A51B26 /* CetegoryScrollView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				827A55BF288EED4A00A51B26 /* AppDelegate.swift in Sources */,
 				827A55C1288EED4A00A51B26 /* SceneDelegate.swift in Sources */,
 				827A563928907C0C00A51B26 /* SocialEnum.swift in Sources */,
+				827A563B2890CABD00A51B26 /* CetegoryScrollView.swift in Sources */,
 				827A5614288F326000A51B26 /* HttpMethod.swift in Sources */,
 				827A560E288F322200A51B26 /* NetworkErrors.swift in Sources */,
 				827A55EF288EF51100A51B26 /* NetworkWorker.swift in Sources */,

@@ -18,8 +18,9 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
     var pagenation: Pagenation?
     var isRefresh = false
     
-    let gifCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     let customNavigation = CustomNavigation()
+    let categoryScrollView = CategoryScrollView()
+    let gifCollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
     
     private var viewModel: HomeViewModelProtocol
     
@@ -88,15 +89,16 @@ class HomeViewController: UIViewController, UINavigationBarDelegate {
 // MARK: - Layout Configuration
 extension HomeViewController {
     
-    fileprivate func setupLayout() {
+    private func setupLayout() {
         self.gifCollectionView.backgroundColor = Asset.backgroundColor.color
         
         setupNavigation()
+        setupCategoryScroll()
         setupCollectionView()
         setupConstraints()
     }
     
-    fileprivate func setupNavigation() {
+    private func setupNavigation() {
         navigationController?.navigationBar.barTintColor = Asset.backgroundColor.color
         navigationController?.navigationBar.backgroundColor = Asset.backgroundColor.color
         navigationController?.navigationBar.isTranslucent = false
@@ -105,7 +107,11 @@ extension HomeViewController {
         self.navigationItem.titleView = customNavigation
     }
     
-    fileprivate func setupCollectionView() {
+    private func setupCategoryScroll() {
+        self.view.addSubview(categoryScrollView)
+    }
+    
+    private func setupCollectionView() {
         gifCollectionView.delegate = self
         gifCollectionView.dataSource = self
 //        gifCollectionView.prefetchDataSource = self
@@ -120,13 +126,20 @@ extension HomeViewController {
         self.view.addSubview(gifCollectionView)
     }
     
-    fileprivate func setupConstraints() {
+    private func setupConstraints() {
         customNavigation.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.left.right.equalToSuperview()
+        }
+        
+        categoryScrollView.snp.makeConstraints { make in
+            make.top.equalTo(self.view.safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(52)
         }
         
         gifCollectionView.snp.makeConstraints { make in
-            make.top.bottom.leading.trailing.equalToSuperview()
+            make.top.equalTo(categoryScrollView.snp.bottom)
+            make.bottom.left.right.equalToSuperview()
         }
     }
 }

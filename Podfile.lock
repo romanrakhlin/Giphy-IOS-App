@@ -1,14 +1,12 @@
 PODS:
   - Alamofire (5.6.1)
   - Kingfisher (7.2.4)
-  - LoadingShimmer (1.0.3)
   - SnapKit (5.6.0)
   - SwiftGen (6.5.1)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher
-  - LoadingShimmer
   - SnapKit
   - SwiftGen
 
@@ -16,17 +14,15 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - Kingfisher
-    - LoadingShimmer
     - SnapKit
     - SwiftGen
 
 SPEC CHECKSUMS:
   Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
   Kingfisher: 2457be2121734e69e54a2312ecc0150eb9ae70b3
-  LoadingShimmer: dd681218498ec9648f572b845a7299b9c62e8e30
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
 
-PODFILE CHECKSUM: 1367dc7bf1d9994cd60bf84ac7a509910fadc23d
+PODFILE CHECKSUM: 04afd20b701d3b818d917b8305fa4ed2261b60f9
 
 COCOAPODS: 1.11.3

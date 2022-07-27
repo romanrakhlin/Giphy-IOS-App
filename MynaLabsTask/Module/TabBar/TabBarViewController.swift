@@ -34,6 +34,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         appearance.backgroundColor = Asset.backgroundColor.color
 
         UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 }
 
