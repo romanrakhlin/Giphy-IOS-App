@@ -15,13 +15,24 @@ class DetailViewController: UIViewController {
     let shareButton = UIButton()
     
     let previewImage = UIImageView()
+    
     let shareButtonsStack = UIStackView()
     let actionButtonsStack = UIStackView()
+    
+    var previewIsLoaded: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupLayout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        if !previewIsLoaded {
+            switchLoading(start: true)
+        }
     }
     
     public func setGIF(imageUrl: String?) {
@@ -33,7 +44,11 @@ class DetailViewController: UIViewController {
                     .scaleFactor(UIScreen.main.scale),
                     .transition(.fade(0.2)),
                     .cacheOriginalImage
-                ]
+                ],
+                completionHandler: { _ in
+                    self.switchLoading(start: false)
+                    self.previewIsLoaded = true
+                }
             )
         } else {
             self.previewImage.image = Asset.unknown.image
@@ -48,11 +63,14 @@ class DetailViewController: UIViewController {
     }
     
     private func setupUI() {
+        
+        // configure preview image
         previewImage.layer.cornerRadius = 4
         previewImage.backgroundColor = .randomColor
+        previewImage.contentMode = .scaleAspectFill
         previewImage.layer.masksToBounds = true
         
-        switchLoading(start: true)
+        self.view.addSubview(previewImage)
         
         // configure navigation buttons
         var closeButtonConfig = UIButton.Configuration.borderless()
@@ -72,9 +90,20 @@ class DetailViewController: UIViewController {
         self.view.addSubview(closeButton)
         self.view.addSubview(shareButton)
         
-        // configure image
-        previewImage.contentMode = .scaleAspectFit
+        // configure share buttons stack
+        let socials: [Social] = [.IMessage, .Messenger, .Snapchat, .WhatsApp, .Instagram, .Facebook, .Twitter]
+        for social in socials {
+            let socialButton = SocialButton(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+            socialButton.setupSocialButton(for: social)
+            shareButtonsStack.addArrangedSubview(socialButton)
+        }
         
+        shareButtonsStack.axis = .horizontal
+        shareButtonsStack.alignment = .center
+        shareButtonsStack.distribution = .fillEqually
+        shareButtonsStack.spacing = 4
+        
+        self.view.addSubview(shareButtonsStack)
         
         // configure social buttons stack
 //        let
@@ -82,9 +111,6 @@ class DetailViewController: UIViewController {
 //        firstStack.axis = .horizontal
 //        firstStack.alignment = .center
 //        firstStack.distribution = .equalSpacing
-        
-        
-        self.view.addSubview(previewImage)
     }
     
     private func setupConstraints() {
@@ -101,6 +127,21 @@ class DetailViewController: UIViewController {
             make.height.width.equalTo(self.view.frame.width - 40)
             make.centerX.equalTo(self.view)
             make.top.equalTo(120)
+        }
+        
+        shareButtonsStack.snp.makeConstraints { make in
+            make.height.equalTo(44)
+            make.top.equalTo(previewImage.snp.bottom).offset(80)
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+        }
+    }
+
+    private func switchLoading(start: Bool) {
+        if start {
+            previewImage.startShimmeringAnimation()
+        } else {
+            previewImage.stopShimmeringAnimation()
         }
     }
 }

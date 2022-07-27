@@ -56,7 +56,7 @@ class GIFCell: UICollectionViewCell, ReusableView, NibLoadableView {
     }
     
     override func prepareForReuse() {
-        GIFImage.kf.cancelDownloadTask()
+        self.GIFImage.kf.cancelDownloadTask()
         
         self.GIFImage.image = nil
         self.switchLoading(start: true)

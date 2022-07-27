@@ -43,6 +43,6 @@ struct Images: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case original
-        case fixedWidth = "fixed_width" // fixed_width_downsampled is fit here nicely when the internet connection is really bad
+        case fixedWidth = "fixed_width_downsampled" // fixed_width_downsampled is fit here nicely when the internet connection is really bad
     }
 }

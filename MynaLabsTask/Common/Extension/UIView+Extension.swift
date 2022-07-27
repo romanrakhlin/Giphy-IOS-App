@@ -11,8 +11,8 @@ extension UIView {
     
     func startShimmeringAnimation(animationSpeed: Float = 1.4, repeatCount: Float = MAXFLOAT) {
         
-        let lightColor = UIColor(displayP3Red: 1.0, green: 1.0, blue: 1.0, alpha: 0.1).cgColor
-        let blackColor = UIColor.black.cgColor
+        let lightColor = UIColor.white.withAlphaComponent(0.1).cgColor
+        let blackColor = UIColor.black.withAlphaComponent(0.9).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [blackColor, lightColor, blackColor]

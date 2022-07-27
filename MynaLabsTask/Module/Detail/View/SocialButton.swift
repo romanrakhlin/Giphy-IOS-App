@@ -6,12 +6,34 @@
 //
 
 import UIKit
+import SnapKit
 
 class SocialButton: UIImageView {
     
+    let buttonLayer = UIButton()
+    
     var social: Social! = nil
     
-    func setupUI(for social: Social) {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupUI()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupUI() {
+        self.buttonLayer.target(forAction: #selector(shareGIF), withSender: self)
+        self.addSubview(buttonLayer)
+        
+        buttonLayer.snp.makeConstraints { make in
+            make.left.right.top.bottom.equalTo(0)
+        }
+    }
+    
+    public func setupSocialButton(for social: Social) {
         switch social {
         case .IMessage:
             self.image = Asset.unknown.image
@@ -27,6 +49,27 @@ class SocialButton: UIImageView {
             self.image = Asset.unknown.image
         case .Twitter:
             self.image = Asset.unknown.image
+        }
+    }
+    
+    @objc func shareGIF() {
+        switch social {
+        case .IMessage:
+            print("Share to IMessage")
+        case .Messenger:
+            print("Share to Messenger")
+        case .Snapchat:
+            print("Share to Snapchat")
+        case .WhatsApp:
+            print("Share to WhatsApp")
+        case .Instagram:
+            print("Share to Instagram")
+        case .Facebook:
+            print("Share to Facebook")
+        case .Twitter:
+            print("Share to Twitter")
+        case .none:
+            print("Unknown Error")
         }
     }
 }

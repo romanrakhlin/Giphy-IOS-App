@@ -26,6 +26,15 @@ internal enum Asset {
     internal static let green = ColorAsset(name: "Green")
     internal static let pink = ColorAsset(name: "Pink")
   }
+  internal enum Socials {
+    internal static let facebook = ImageAsset(name: "Facebook")
+    internal static let iMessage = ImageAsset(name: "IMessage")
+    internal static let instagram = ImageAsset(name: "Instagram")
+    internal static let messenger = ImageAsset(name: "Messenger")
+    internal static let snapchat = ImageAsset(name: "Snapchat")
+    internal static let twitter = ImageAsset(name: "Twitter")
+    internal static let whatsApp = ImageAsset(name: "WhatsApp")
+  }
   internal static let unknown = ImageAsset(name: "Unknown")
   internal static let backgroundColor = ColorAsset(name: "backgroundColor")
   internal static let camera = ImageAsset(name: "camera")
