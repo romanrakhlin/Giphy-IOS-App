@@ -3,7 +3,7 @@
 ![iOS](https://img.shields.io/badge/iOS-15%20-blue)
 ![Swift](https://img.shields.io/badge/Swift-5-orange?logo=Swift&logoColor=white)
 
-The test task to Myna Labs
+The test task for Myna Labs
 
 <hr />
 
