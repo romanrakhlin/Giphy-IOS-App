@@ -59,13 +59,13 @@ class DetailViewController: UIViewController {
     }
     
     private func setupLayout() {
-        self.view.backgroundColor = Asset.backgroundColor.color
-        
         setupUI()
         setupConstraints()
     }
     
     private func setupUI() {
+        
+        self.view.backgroundColor = Asset.backgroundColor.color
         
         // configure preview image
         previewImage.layer.cornerRadius = 4

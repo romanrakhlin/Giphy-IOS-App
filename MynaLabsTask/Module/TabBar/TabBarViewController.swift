@@ -10,49 +10,48 @@ import UIKit
 class TabBarController: UITabBarController, UITabBarControllerDelegate {
     
     override func viewDidLoad() {
-        viewControllers = TabBar.allCases.map {$0.viewController}
-        addCustomTabBarView()
-        hideTabBarBorder()
-        self.selectedIndex = 0
+        viewControllers = TabBar.allCases.map { $0.viewController }
         self.delegate = self
-        self.tabBar.tintColor = .red
+        self.selectedIndex = 0
+        
+        setupUI()
     }
     
-    let customTabBarView: UIView = {
-        let view = UIView(frame: .zero)
-        view.layer.masksToBounds = true
-        view.clipsToBounds = true
-        return view
-    }()
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        customTabBarView.frame = tabBar.frame
-    }
-    
-    func addCustomTabBarView() {
-        customTabBarView.frame = tabBar.frame
-        view.addSubview(customTabBarView)
-        view.bringSubviewToFront(self.tabBar)
-    }
-    
-    func hideTabBarBorder() {
-        let tabBar = self.tabBar
-        tabBar.shadowImage = UIImage()
-        tabBar.clipsToBounds = true
-        tabBar.layer.masksToBounds = false
+    private func setupUI() {
+        let image = UIImage.gradientImageWithBounds(
+            bounds: CGRect(x: 0, y: 0, width: UIScreen.main.scale, height: 80),
+            colors: [
+                UIColor.clear.cgColor,
+                Asset.backgroundColor.color.withAlphaComponent(1).cgColor
+            ]
+        )
+
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+                
+        appearance.backgroundImage = UIImage()
+        appearance.shadowImage = image
+        appearance.backgroundColor = Asset.backgroundColor.color
+
+        UITabBar.appearance().standardAppearance = appearance
     }
 }
 
 enum TabBar: String, CaseIterable {
     
     case home
+    case search
+    case profile
     
     var viewController: UINavigationController {
         var viewController = UINavigationController()
         switch self {
         case .home:
             viewController = UINavigationController(rootViewController: HomeViewController(viewModel: HomeViewModel()))
+        case .search:
+            viewController = UINavigationController(rootViewController: UIViewController())
+        case .profile:
+            viewController = UINavigationController(rootViewController: UIViewController())
         }
         
         viewController.tabBarItem = tabBarItem
@@ -63,7 +62,25 @@ enum TabBar: String, CaseIterable {
     var tabBarItem: UITabBarItem {
         switch self {
         case .home:
-            return .init(title: nil, image: UIImage(named: TabBar.home.rawValue), selectedImage: UIImage(named: TabBar.home.rawValue))
+            return .init(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(named: TabBar.home.rawValue))
+        case .search:
+            return .init(title: nil, image: UIImage(systemName: "magnifyingglass"), selectedImage: UIImage(named: TabBar.home.rawValue))
+        case .profile:
+            return .init(title: nil, image: UIImage(systemName: "person"), selectedImage: UIImage(named: TabBar.home.rawValue))
         }
+    }
+}
+
+extension UIImage {
+    static func gradientImageWithBounds(bounds: CGRect, colors: [CGColor]) -> UIImage {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = bounds
+        gradientLayer.colors = colors
+        
+        UIGraphicsBeginImageContext(gradientLayer.bounds.size)
+        gradientLayer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }
