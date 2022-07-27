@@ -36,19 +36,19 @@ class SocialButton: UIImageView {
     public func setupSocialButton(for social: Social) {
         switch social {
         case .IMessage:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.iMessage.image
         case .Messenger:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.messenger.image
         case .Snapchat:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.snapchat.image
         case .WhatsApp:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.whatsApp.image
         case .Instagram:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.instagram.image
         case .Facebook:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.facebook.image
         case .Twitter:
-            self.image = Asset.unknown.image
+            self.image = Asset.Socials.twitter.image
         }
     }
     

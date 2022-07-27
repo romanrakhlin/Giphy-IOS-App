@@ -17,7 +17,10 @@ class DetailViewController: UIViewController {
     let previewImage = UIImageView()
     
     let shareButtonsStack = UIStackView()
-    let actionButtonsStack = UIStackView()
+    
+    let copyLinkButton = UIButton()
+    let copyGIFButton = UIButton()
+    let cancelButton = UIButton()
     
     var previewIsLoaded: Bool = false
     
