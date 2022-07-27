@@ -17,12 +17,10 @@ class DetailViewController: UIViewController {
     let previewImage = UIImageView()
     
     let shareButtonsStack = UIStackView()
-    
-    let copyLinkButton = UIButton()
-    let copyGIFButton = UIButton()
-    let cancelButton = UIButton()
+    let mainButtonsStack = UIStackView()
     
     var previewIsLoaded: Bool = false
+    var currentGIFLink: String! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +37,8 @@ class DetailViewController: UIViewController {
     }
     
     public func setGIF(imageUrl: String?) {
+        currentGIFLink = imageUrl
+        
         if let imageUrl = imageUrl, let url = URL(string: imageUrl) {
             self.previewImage.kf.setImage(
                 with: url,
@@ -82,6 +82,7 @@ class DetailViewController: UIViewController {
         closeButtonConfig.buttonSize = .medium
         closeButtonConfig.contentInsets = .init(top: 20, leading: 20, bottom: 20, trailing: 20)
         closeButton.configuration = closeButtonConfig
+        closeButton.addTarget(self, action: #selector(quitDetail), for: .touchUpInside)
         
         var shareButtonConfig = UIButton.Configuration.borderless()
         shareButtonConfig.image = UIImage(systemName: "square.and.arrow.up")
@@ -104,16 +105,40 @@ class DetailViewController: UIViewController {
         shareButtonsStack.axis = .horizontal
         shareButtonsStack.alignment = .center
         shareButtonsStack.distribution = .fillEqually
-        shareButtonsStack.spacing = 4
+        shareButtonsStack.spacing = 8
         
         self.view.addSubview(shareButtonsStack)
         
-        // configure social buttons stack
-//        let
-//
-//        firstStack.axis = .horizontal
-//        firstStack.alignment = .center
-//        firstStack.distribution = .equalSpacing
+        // configure three buttons
+        var mainButtonConfiguration = UIButton.Configuration.borderless()
+        mainButtonConfiguration.baseForegroundColor = .white
+        mainButtonConfiguration.buttonSize = .large
+        mainButtonConfiguration.contentInsets = .init(top: 20, leading: 80, bottom: 20, trailing: 80)
+        
+        let copyLinkButton = UIButton(configuration: mainButtonConfiguration)
+        copyLinkButton.setTitle("Copy GIF Link", for: .normal)
+        copyLinkButton.backgroundColor = Asset.mainButtonColor.color
+        copyLinkButton.addTarget(self, action: #selector(copyLink), for: .touchUpInside)
+        
+        let copyGIFButton = UIButton(configuration: mainButtonConfiguration)
+        copyGIFButton.setTitle("Copy GIF", for: .normal)
+        copyGIFButton.backgroundColor = .white.withAlphaComponent(0.2)
+        copyLinkButton.addTarget(self, action: #selector(copyGIF), for: .touchUpInside)
+        
+        let cancelButton = UIButton(configuration: mainButtonConfiguration)
+        cancelButton.setTitle("Cancel", for: .normal)
+        cancelButton.backgroundColor = .clear
+        cancelButton.addTarget(self, action: #selector(quitDetail), for: .touchUpInside)
+        
+        mainButtonsStack.addArrangedSubview(copyLinkButton)
+        mainButtonsStack.addArrangedSubview(copyGIFButton)
+        mainButtonsStack.addArrangedSubview(cancelButton)
+    
+        mainButtonsStack.axis = .vertical
+        mainButtonsStack.distribution = .fillEqually
+        mainButtonsStack.spacing = 8
+        
+        self.view.addSubview(mainButtonsStack)
     }
     
     private func setupConstraints() {
@@ -138,6 +163,26 @@ class DetailViewController: UIViewController {
             make.left.equalTo(20)
             make.right.equalTo(-20)
         }
+        
+        mainButtonsStack.snp.makeConstraints { make in
+            make.width.equalTo(self.view.frame.width - 40)
+            make.height.equalTo(148)
+            make.top.equalTo(shareButtonsStack.snp.bottom).offset(8)
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+        }
+    }
+    
+    @objc func copyGIF() {
+        UIPasteboard.general.image = previewImage.image
+    }
+    
+    @objc func copyLink() {
+        UIPasteboard.general.string = currentGIFLink
+    }
+    
+    @objc func quitDetail() {
+        self.dismiss(animated: true)
     }
 
     private func switchLoading(start: Bool) {

@@ -23,6 +23,7 @@ struct GiphyData: Decodable {
     var username: String?
     var images: Images?
 }
+
 struct Images: Decodable {
     var original: Original?
     var fixedWidth: FixedWidth?

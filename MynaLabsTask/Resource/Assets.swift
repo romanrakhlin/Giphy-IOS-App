@@ -39,6 +39,7 @@ internal enum Asset {
   internal static let backgroundColor = ColorAsset(name: "backgroundColor")
   internal static let camera = ImageAsset(name: "camera")
   internal static let logo = ImageAsset(name: "logo")
+  internal static let mainButtonColor = ColorAsset(name: "mainButtonColor")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 
