@@ -30,6 +30,7 @@ class CategoryScrollView: UIView {
     }
     
     private func setupLayout() {
+        categoryScroll.showsHorizontalScrollIndicator = false
         self.addSubview(categoryScroll)
         
         var buttonConfiguration = UIButton.Configuration.bordered()

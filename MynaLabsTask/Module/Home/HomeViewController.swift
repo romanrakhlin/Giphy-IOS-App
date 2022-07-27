@@ -118,6 +118,7 @@ extension HomeViewController {
         gifCollectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         gifCollectionView.register(GIFCell.self)
         gifCollectionView.collectionViewLayout = GiphyLayout()
+        gifCollectionView.showsVerticalScrollIndicator = false
         
         if let layout = gifCollectionView.collectionViewLayout as? GiphyLayout {
             layout.delegate = self
