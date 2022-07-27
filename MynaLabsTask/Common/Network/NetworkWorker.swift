@@ -17,12 +17,10 @@ class NetworkWorker {
 
     func sendRequest<Success: Decodable>(urlRequest: URLRequest, successModel: Success.Type, completion: @escaping (Result<Success>) -> Void) {
         
-        var urlEncoding: ParameterEncoding = URLEncoding.default
         let manager = Alamofire.Session.default
-       
         manager.session.configuration.timeoutIntervalForRequest = 10
         
-        _ = manager.request(urlRequest).validate().responseJSON { responseData in
+        manager.request(urlRequest).validate().responseJSON { responseData in
             DispatchQueue.main.async {
                 switch responseData.result {
                 case .success(let successData):
@@ -53,9 +51,11 @@ class NetworkWorker {
         if let error = error {
             return error
         }
+        
         guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
             return URLError(.badServerResponse)
         }
+        
         switch statusCode {
         case StatusCode.okey.rawValue:
             return nil
@@ -64,6 +64,7 @@ class NetworkWorker {
         default:
             break
         }
+        
         return nil
     }
 

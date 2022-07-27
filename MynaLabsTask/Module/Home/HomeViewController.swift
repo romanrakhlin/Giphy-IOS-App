@@ -174,7 +174,7 @@ extension HomeViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (self.gifCollectionView.contentOffset.y >= (self.gifCollectionView.contentSize.height - self.gifCollectionView.bounds.size.height)) {
-            guard let totalCount = pagenation?.total_count, totalCount > self.GIFs.count, !isRefresh else {
+            guard let totalCount = pagenation?.totalCount, totalCount > self.GIFs.count, !isRefresh else {
                 return
             }
             
@@ -210,7 +210,7 @@ extension HomeViewController: MosaicLayoutDelegate {
     }
 }
 
-// MARK: - UICollectionViewDataSourcePrefetching
+// TODO: - Play with it and decide whether to keep it
 //extension HomeViewController: UICollectionViewDataSourcePrefetching {
 //    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
 //        let urls = indexPaths.compactMap { URL(string: (GIFs[$0.row].images?.r?.url)!) }

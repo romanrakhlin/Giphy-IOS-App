@@ -13,9 +13,15 @@ struct GiphyListModel: Decodable {
 }
 
 struct Pagenation: Decodable {
-    var total_count: Int?
+    var totalCount: Int?
     var count: Int?
     var offset: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case totalCount = "total_count"
+        case count
+        case offset
+    }
 }
 
 struct GiphyData: Decodable {
@@ -44,6 +50,6 @@ struct Images: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case original
-        case fixedWidth = "fixed_width_downsampled" // fixed_width_downsampled is fit here nicely when the internet connection is really bad
+        case fixedWidth = "fixed_width_downsampled" // fixed_width_downsampled is fit here nicely when the internet connection is really bad, normally is just fixed_width
     }
 }

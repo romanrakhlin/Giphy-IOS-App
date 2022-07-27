@@ -13,8 +13,11 @@ The test task for Myna Labs
 
 ## Features
 
+Implemented using pure MVVM with no additional frameworks.
+
 That's a list of features:
 - Mosaic Feed
+- Shimmer Loading
 - Smooth Scrolling and Fast Chaching of GIFs
 - Detail Screen
 - Amazing Design
